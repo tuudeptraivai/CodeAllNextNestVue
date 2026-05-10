@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CINEPHILE - Premium Asian Cinema</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="./shared.css" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#4edea3",
+                        "on-primary": "#003824",
+                        "background": "#0b1326",
+                        "surface": "#0b1326",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#bbcabf",
+                        "primary-container": "#10b981",
+                        "on-primary-container": "#00422b",
+                        "secondary": "#95d3ba",
+                        "surface-container": "#171f33",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-highest": "#2d3449",
+                        "outline": "#86948a",
+                    },
+                    "fontFamily": {
+                        "body": ["Be Vietnam Pro", "sans-serif"],
+                        "display": ["Be Vietnam Pro", "sans-serif"],
+                        "label": ["Spline Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body text-on-surface bg-background selection:bg-primary selection:text-on-primary">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-2xl border-b border-white/10 transition-all duration-300">
+        <div class="flex justify-between items-center px-6 md:px-8 py-4 max-w-[1440px] mx-auto h-16 md:h-20">
+            <div class="flex items-center gap-12">
+                <span class="text-xl md:text-2xl font-black italic tracking-tighter text-primary uppercase font-display">CINEPHILE</span>
+                <nav class="hidden md:flex gap-8">
+                    <a class="text-primary font-semibold border-b-2 border-primary pb-1" href="index.html">Home</a>
+                    <a class="text-slate-400 font-medium hover:text-slate-100 transition-colors" href="movie.html">Movies</a>
+                    <a class="text-slate-400 font-medium hover:text-slate-100 transition-colors" href="#">TV Shows</a>
+                    <a class="text-slate-400 font-medium hover:text-slate-100 transition-colors" href="actors.html">Actors</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex items-center bg-white/10 rounded-full px-4 py-1.5 border border-white/5 group focus-within:border-primary/50 transition-all">
+                    <span class="material-symbols-outlined text-slate-400 text-sm group-focus-within:text-primary">search</span>
+                    <input class="bg-transparent border-none focus:ring-0 text-sm text-white placeholder-slate-500 w-48" placeholder="Search movies, actors..." type="text"/>
+                </div>
+                <button class="md:hidden text-slate-400 hover:text-primary">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary border border-primary/20 cursor-pointer">
+                    <span class="material-symbols-outlined text-sm">person</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative w-full h-[70vh] md:h-screen min-h-[500px] flex items-end overflow-hidden">
+            <img class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTgniOuySWFSJJArZkP98djdyotFFJEIWa2-MzdHwTAZiEco_3D9o9hVYmQUERNYelNxXvdyqlLud46iPv95VeKZ19gLFfIhnFwjid9ulMill_LuqVAvUBsvLKGBrVQrSUiaP6LO5laHPtiAesCcY0YZ26tDQv6agCA1f5v1q_vde4WtI9SVOpCKZ4N7LzoeVk-tVeQkjjkNJCcPjYqqPUDVJyUT9SG1nfZ7qFPquxBph-bILRXa2KXJMCUseRcfAfZ6DHNJtvlQ"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+            <div class="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-16 pb-20 md:pb-32 space-y-6">
+                <div class="flex items-center gap-2">
+                    <span class="bg-primary text-on-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-widest">Trending Now</span>
+                    <span class="text-white/60 text-xs font-semibold">• 16 Episodes • 2024</span>
+                </div>
+                <h1 class="text-4xl md:text-7xl font-display font-black text-white leading-tight max-w-2xl drop-shadow-2xl">Nụ Hôn Siren</h1>
+                <p class="text-on-surface-variant text-sm md:text-lg max-w-xl line-clamp-3 md:line-clamp-none">
+                    Khám phá câu chuyện tình yêu huyền bí giữa đại dương xanh thẳm. Một hành trình đầy cảm xúc vượt qua mọi rào cản của thế giới loài người và mỹ nhân ngư.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="movie-detail.html" class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold flex items-center gap-2 emerald-glow hover:scale-105 transition-transform">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                        Xem Ngay
+                    </a>
+                    <button class="glass-panel text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-white/10 transition-all border border-white/10">
+                        <span class="material-symbols-outlined">add</span>
+                        Danh Sách
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movie Sections -->
+        <section class="max-w-[1440px] mx-auto px-6 md:px-16 py-12 md:py-20 space-y-20">
+            <!-- Continue Watching (Simulated) -->
+            <div class="space-y-6">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-xl md:text-3xl font-display font-bold text-white flex items-center gap-3">
+                        <span class="w-1.5 h-8 bg-primary rounded-full"></span>
+                        Tiếp Tục Xem
+                    </h2>
+                </div>
+                <div class="flex gap-4 md:gap-6 overflow-x-auto pb-4 hide-scrollbar">
+                    <div class="group relative shrink-0 w-64 md:w-80 aspect-video rounded-2xl overflow-hidden cursor-pointer">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr4MFDyNU64DgTAYsosherx8gTinT1WKHQ6LhaWwLubn1RJUQMRMLUQsbKYUGckdaSlz7QMyP5ymVjULZ2Bd-p9P1glweNmI8p4qwySyxTG_pVbgFcM2ebDT4W8HY45JCLQ-VtD76Dq4d5zBlf9kJykxCRVI9uCLMy36MwQXECka-OUonUf7Xub4KSIUqchdRQXWaZpdDe8J7QxkFC8dUCbrcCRiIvXd3tKOWJYcnVSL9p4OBdXhbSEdjGo8LtsJB37ZhtS1g"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                            <h3 class="text-white font-bold truncate">Hương Vị Tình Yêu</h3>
+                            <div class="w-full h-1 bg-white/20 rounded-full mt-3 overflow-hidden">
+                                <div class="w-1/2 h-full bg-primary bloom-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More continue watching... -->
+                </div>
+            </div>
+
+            <!-- New Releases -->
+            <div class="space-y-6">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-xl md:text-3xl font-display font-bold text-white flex items-center gap-3">
+                        <span class="w-1.5 h-8 bg-primary rounded-full"></span>
+                        Phim Mới Cập Nhật
+                    </h2>
+                    <a href="movie.html" class="text-primary text-sm font-bold hover:underline">Xem tất cả</a>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-gutter">
+                    <!-- Movie Card 1 -->
+                    <a href="movie-detail.html" class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZYcpDYg4tOXow04D0ozIX34wXosiI4jD47KyRYVNfmdWemteYaOSDKZVlKPNL4_GW80rZYtkq3rFCZzCY43tkcDOwpojNyg7jxeHpw-cx884g_wb6o7dxdHzvCFe-4R8ZrbDVB7PX7btF5m3Ej1iGn_iKKpqPd8oaaQEPY4ufRrwJCZwTtW8STR8okcWw-Ni55yu4Uh9XUPuc65TolsAJh2q9KHfsBBNfM3Rh5suOKEF0A2c8HqOxkIl51shydykBTAeP4TGv8A"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <h4 class="text-white font-bold truncate">Vây Hãm</h4>
+                            <p class="text-primary text-[10px]">2024 • Hành động</p>
+                        </div>
+                    </a>
+                    <!-- More movie cards -->
+                    <a href="movie-detail.html" class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMPIUMBKx49tJMNrtZNDUROTMlV4LZbjFuQBEPuY-k7nmVTKhjLUF5WVFTdbLSIPcAaBTBchNLziSvpXZw2ca5bUe1a1wW0Y-wYTvwSViYFsAPZF3VavixdmKkbdqdWdTjBnhL5mnNl0TW3yvApR5yIMn5-4uTL84htqs2OdbG3MnA_JkquP54T1j31THRMlLHlC-YuI2CEX_jQexF42rHcT6-iXSMIfUMQHN47sd9wSen6R4nGxZRaFZysbstG5elvjgDuN1IHw"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <h4 class="text-white font-bold truncate">Bí Ẩn Thành Phố</h4>
+                            <p class="text-primary text-[10px]">2024 • Trinh thám</p>
+                        </div>
+                    </a>
+                    <a href="movie-detail.html" class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcf10EuDY6LQK12u3gE5uoiCJSF6ddZbze1Ho8A_wfZh45bQTYYvgaMZnGThpjNGX3maSsssU8i7nCw7XEa1aYjvmhtjfwe0vtaOWas8kG_EZVU_88CkZBepxur1mXsckKhtnuX9znZjVuXBoNSXxw-U8WjLaz62qttj9V4SSdmIra4G2JlW0blylz7hitlvQj3XHnK9eOkhQtpKMrlRu-JWkDo_cy3j2CGld0n5OL3eovWctzKrHeoSQN_vAxjiHwsmWfgoAz1w"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <h4 class="text-white font-bold truncate">Ngày Mai Sẽ Khác</h4>
+                            <p class="text-primary text-[10px]">2024 • Tâm lý</p>
+                        </div>
+                    </a>
+                    <a href="movie-detail.html" class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGuy757yGAlehTiCUCwPpSiS_ngwLxORFkruOqnd4yME79szTUiFd-NwiY8OlGT0oebsD0fgFBJ8bqQN0WKPumZTKfFnBEkpNiwFbcr_7Pvz-45MXtcLVCZMHMrALjHQppWuZYFBJwo9LqiZzgG_lVnjpnIikroxy9Pv1DnP4U-pGSrNp3igeseuD-IJhzCstJRu0U_A7L0QI9U9NU3vgUkQ1ovpZQEMNcBlvhbeMElkzeKJigMvv8wgZ4S4nrarOLn2XSgrKgwg"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <h4 class="text-white font-bold truncate">Vương Triều Cuối</h4>
+                            <p class="text-primary text-[10px]">2024 • Cổ trang</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-slate-950/80 backdrop-blur-2xl border-t border-white/10 rounded-t-2xl">
+        <a class="flex flex-col items-center justify-center text-primary" href="index.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="movie.html">
+            <span class="material-symbols-outlined">movie</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Movies</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="#">
+            <span class="material-symbols-outlined">explore</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Discovery</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="profile.html">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Account</span>
+        </a>
+    </nav>
+
+    <footer class="bg-slate-950/50 border-t border-white/5 py-12 md:py-20 mt-20">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="space-y-6">
+                <span class="text-2xl font-black italic text-primary uppercase font-display tracking-tighter">CINEPHILE</span>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Nền tảng xem phim trực tuyến hàng đầu châu Á với chất lượng hình ảnh và âm thanh đỉnh cao.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Khám Phá</h4>
+                <ul class="space-y-4 text-sm text-on-surface-variant">
+                    <li><a href="#" class="hover:text-primary transition-colors">Phim Điện Ảnh</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Phim Bộ</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">TV Shows</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Diễn Viên</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Hỗ Trợ</h4>
+                <ul class="space-y-4 text-sm text-on-surface-variant">
+                    <li><a href="#" class="hover:text-primary transition-colors">Trung Tâm Trợ Giúp</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Điều Khoản Sử Dụng</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Chính Sách Bảo Mật</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Kết Nối</h4>
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all cursor-pointer">
+                        <span class="material-symbols-outlined">facebook</span>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all cursor-pointer">
+                        <span class="material-symbols-outlined">share</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-[1440px] mx-auto px-6 md:px-16 mt-12 pt-8 border-t border-white/5 text-center">
+            <p class="text-slate-500 text-xs">© 2024 CINEPHILE. All rights reserved. Designed for Premium Asian Cinema.</p>
+        </div>
+    </footer>
+</body>
+</html>

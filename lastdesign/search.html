@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;900&amp;family=Spline+Sans:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#002117",
+                    "surface-bright": "#31394d",
+                    "inverse-on-surface": "#283044",
+                    "on-tertiary-fixed-variant": "#005137",
+                    "on-surface": "#dae2fd",
+                    "inverse-surface": "#dae2fd",
+                    "on-surface-variant": "#bbcabf",
+                    "on-tertiary-container": "#00422c",
+                    "inverse-primary": "#006c49",
+                    "primary-container": "#10b981",
+                    "primary-fixed-dim": "#4edea3",
+                    "error-container": "#93000a",
+                    "secondary-fixed-dim": "#95d3ba",
+                    "surface-container-lowest": "#060e20",
+                    "on-error": "#690005",
+                    "surface-container-low": "#131b2e",
+                    "surface-container-highest": "#2d3449",
+                    "surface-variant": "#2d3449",
+                    "on-primary-fixed-variant": "#005236",
+                    "on-secondary-container": "#83c2a9",
+                    "surface-dim": "#0b1326",
+                    "background": "#0b1326",
+                    "on-tertiary": "#003825",
+                    "secondary-fixed": "#b0f0d6",
+                    "on-secondary": "#003829",
+                    "tertiary-fixed-dim": "#45dfa4",
+                    "tertiary-fixed": "#68fcbf",
+                    "on-primary-container": "#00422b",
+                    "surface-tint": "#4edea3",
+                    "outline-variant": "#3c4a42",
+                    "on-secondary-fixed-variant": "#0b513d",
+                    "primary": "#4edea3",
+                    "on-tertiary-fixed": "#002114",
+                    "surface": "#0b1326",
+                    "surface-container-high": "#222a3d",
+                    "tertiary": "#45dfa4",
+                    "error": "#ffb4ab",
+                    "outline": "#86948a",
+                    "primary-fixed": "#6ffbbe",
+                    "on-background": "#dae2fd",
+                    "tertiary-container": "#00b982",
+                    "on-primary-fixed": "#002113",
+                    "on-primary": "#003824",
+                    "secondary": "#95d3ba",
+                    "surface-container": "#171f33",
+                    "on-error-container": "#ffdad6",
+                    "secondary-container": "#0b513d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "1.5rem",
+                    "gutter": "1.25rem",
+                    "container-padding": "4rem",
+                    "xl": "2.5rem",
+                    "xs": "0.25rem",
+                    "sm": "0.5rem",
+                    "md": "1rem"
+            },
+            "fontFamily": {
+                    "body-lg": ["Be Vietnam Pro"],
+                    "headline-md": ["Be Vietnam Pro"],
+                    "headline-xl": ["Be Vietnam Pro"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "display-lg": ["Be Vietnam Pro"],
+                    "label-sm": ["Spline Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-xl": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(45, 52, 73, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .emerald-glow:hover {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-slate-950/80 backdrop-blur-2xl docked full-width top-0 sticky z-50 border-b border-white/10 shadow-2xl shadow-black/50 font-['Be_Vietnam_Pro'] antialiased tracking-tight">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black italic tracking-tighter text-emerald-500 uppercase">CINEPHILE</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-400 font-medium hover:text-slate-100 transition-colors" href="#">Movies</a>
+<a class="text-slate-400 font-medium hover:text-slate-100 transition-colors" href="#">TV Shows</a>
+<a class="text-slate-400 font-medium hover:text-slate-100 transition-colors" href="#">Actors</a>
+<a class="text-emerald-400 font-semibold border-b-2 border-emerald-500 pb-1" href="#">Discover</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<input class="bg-white/5 border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-emerald-500 w-64 transition-all" placeholder="Search movies..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+</div>
+<button class="px-6 py-2 bg-emerald-500 text-on-primary-container font-semibold rounded-full hover:bg-emerald-400 scale-95 active:scale-90 transition-transform">Subscribe</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-8 py-xl">
+<!-- Filter Section -->
+<section class="mb-xl">
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-primary">filter_list</span>
+<h2 class="font-headline-md text-headline-md">Bộ lọc</h2>
+</div>
+<div class="glass-panel rounded-xl p-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Genre Filter -->
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-slate-400 block uppercase tracking-widest">Thể loại</label>
+<select class="w-full bg-surface-container border-none text-on-surface rounded-lg py-3 px-4 focus:ring-2 focus:ring-emerald-500 appearance-none">
+<option>Tất cả thể loại</option>
+<option>Hành động</option>
+<option>Viễn tưởng</option>
+<option>Kinh dị</option>
+<option>Tình cảm</option>
+</select>
+</div>
+<!-- Year Filter -->
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-slate-400 block uppercase tracking-widest">Năm phát hành</label>
+<select class="w-full bg-surface-container border-none text-on-surface rounded-lg py-3 px-4 focus:ring-2 focus:ring-emerald-500 appearance-none">
+<option>2024</option>
+<option>2023</option>
+<option>2022</option>
+<option>2021</option>
+<option>Trước 2020</option>
+</select>
+</div>
+<!-- Quality Filter -->
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-slate-400 block uppercase tracking-widest">Chất lượng</label>
+<div class="flex gap-2">
+<button class="flex-1 py-3 px-4 bg-emerald-500 text-on-primary-container font-semibold rounded-lg text-sm">4K Ultra HD</button>
+<button class="flex-1 py-3 px-4 bg-surface-container-high text-on-surface font-medium rounded-lg text-sm hover:bg-surface-variant transition-colors">FHD 1080p</button>
+</div>
+</div>
+<!-- Search/Action -->
+<div class="flex items-end">
+<button class="w-full py-3 bg-emerald-500 text-on-primary-container font-bold rounded-lg emerald-glow transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">search</span>
+                        Tìm kiếm phim
+                    </button>
+</div>
+</div>
+<!-- Active Chips -->
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-full text-xs font-semibold flex items-center gap-2">
+                    Hành động <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+<span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-full text-xs font-semibold flex items-center gap-2">
+                    2024 <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+<button class="text-xs text-slate-500 hover:text-emerald-400 underline underline-offset-4 ml-2">Xóa tất cả</button>
+</div>
+</section>
+<!-- Movie Grid -->
+<section class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-gutter">
+<!-- Movie Card 1 -->
+<div class="group relative aspect-[2/3] rounded-xl overflow-hidden glass-panel scale-100 hover:scale-105 transition-all duration-300 cursor-pointer">
+<img alt="Neon futuristic cityscape poster" class="w-full h-full object-cover" data-alt="cinematic movie poster of a glowing futuristic neon city at night with sharp architectural silhouettes and deep cyan and emerald lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQKC-AcygFDBI3XzPp6Oh0nGdHaskHWqFYUPLNgnyzFmxB0QOGOFhtOD0JbhJDQxMZCBn7b1ssg-wmMDXdZI2E6X-_ad0O7SbmYfj7wKaTryK7a0nluh6_lvF_qWNze8mEY_QdAGg2EyH1PFyOG7BNdwIzkXVPPXaAforGQNDEp1RSzlPht47q42l-P39DvKrOSYER-oAtC1h9lIQXcf_wAyHEa30R7P63W7P2qG46n6ELakKzoFV4_cPA7fEmrv-yFsYS6bCweg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<h3 class="font-headline-md text-sm text-white line-clamp-2">Neon Redemption</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-emerald-400 text-xs font-bold">8.4 IMDB</span>
+<span class="bg-emerald-500 text-on-primary-container text-[10px] px-2 py-0.5 rounded font-black">4K</span>
+</div>
+</div>
+</div>
+<!-- Movie Card 2 -->
+<div class="group relative aspect-[2/3] rounded-xl overflow-hidden glass-panel scale-100 hover:scale-105 transition-all duration-300 cursor-pointer">
+<img alt="Vintage black and white cinema" class="w-full h-full object-cover" data-alt="atmospheric black and white cinematic shot of a lone detective in a trench coat standing under a streetlamp in the fog" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxnu0TcTm-Z7Vv8OwHe6SVOEPEs1jr2G0CeoVxCObaX7m09SJNQ1R-shf7OfMfpoEng1WdxBlXqF8ZDlCEbaugJiHu0kVsVz_ngKoDpOv_Kz0FAs5P40UOfyfs3j1ubZ__5lQ7-diY4Ce-wcvdwZYoz7DpVCioJZBPGkWn4Tx7MQmDyIIzx-7C2M34tLooBSVl0QwHA9A_I60THbjJCXN9FKizrHQe3N3iEnNK82umyLyEJiYjse-mvE5JIW_-xAQmW4cVgCz0-w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<h3 class="font-headline-md text-sm text-white line-clamp-2">The Silent Echo</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-emerald-400 text-xs font-bold">7.9 IMDB</span>
+<span class="bg-emerald-500 text-on-primary-container text-[10px] px-2 py-0.5 rounded font-black">FHD</span>
+</div>
+</div>
+</div>
+<!-- Movie Card 3 -->
+<div class="group relative aspect-[2/3] rounded-xl overflow-hidden glass-panel scale-100 hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-emerald-500/50">
+<img alt="Deep space exploration" class="w-full h-full object-cover" data-alt="breathtaking interstellar scene of a massive ringed planet with glowing nebulae and distant stars in deep space aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZraJIb6zxhNa9FFZ6yFxfai38oQNnhc8Ymf944mPOMsjftGKq4MrQeYC6KIkQr9U8hp7wzsyQlBJV0Q_3yfMCEDcgwdTEKB4vXkpGPfsSv_pNbZl-0tl3rElUTQq5pJ8D53eJFMmphaOjY6jzZf4jgHX9B0ALC1RhlUF1r6y-bF_RBYfG6BuxBsiorb7Gns1NZCREjEW85VZwAUXvRl5TEdAzbsFnV51YeSXHgDKGLIlr8iygP7vRWxSrt041fvQZ5uDuyOuNRA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-4">
+<div class="absolute top-2 left-2 px-2 py-1 bg-emerald-500 text-on-primary-container text-[10px] font-bold rounded">ĐANG XEM</div>
+<h3 class="font-headline-md text-sm text-white line-clamp-2">Odyssey Beyond</h3>
+<div class="mt-2 w-full bg-slate-800 h-1 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-emerald-500 to-lime-400 w-[65%]"></div>
+</div>
+</div>
+</div>
+<!-- Repeating placeholders for grid structure -->
+<div class="group relative aspect-[2/3] rounded-xl overflow-hidden glass-panel scale-100 hover:scale-105 transition-all duration-300 cursor-pointer">
+<img alt="Abstract horror poster" class="w-full h-full object-cover" data-alt="creepy abstract close-up of a shattered mirror with dark oily textures and high contrast dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8G6c3hLQmT2Nhd4w5CNeAQJAdlxLMjPksAc5aEDCFxHOpgAhqlg4uA8grKUOC7jro9JsgT_efgPwQ3Da2-vAog9wNwyx5fMLASRZA1O4imOIjNc1JeFcDjArvIiagdDXmxb7yaOgyQ8YQyxv9AgZzMMR6wRBGQ4qZPds1LYcFRbX4xlxFh8Cmv9LbS93YqLzfctKuOe089V93N3KQh5q0bJcpZyckQGn-llCLjzt5N5aWOSH4nWL6GHRP1kYYzfKVn_WFzizs_g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<h3 class="font-headline-md text-sm text-white line-clamp-2">Fractured Reality</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-emerald-400 text-xs font-bold">8.1 IMDB</span>
+<span class="bg-emerald-500 text-on-primary-container text-[10px] px-2 py-0.5 rounded font-black">4K</span>
+</div>
+</div>
+</div>
+<div class="group relative aspect-[2/3] rounded-xl overflow-hidden glass-panel scale-100 hover:scale-105 transition-all duration-300 cursor-pointer">
+<img alt="Cyberpunk car" class="w-full h-full object-cover" data-alt="sleek chrome sportscar racing through a wet midnight city street with vibrant neon reflections on the ground" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZAhXfIswY_uX9e4w33AjTMVEQkimroMYUNup0mjvA3G_fgugq1gb0zDHn5j_S0fyOukv2xwgkEbK9tFGc1YSl-XttrzaEznzCvRL4h3zr-vxgr7XL29yyzZnnA_GjzRwSpX7iFRbz8RjJiO3SPNsNn0RyTwCnQV0_oP_R-saGE3_iXtFRTPrJ5ayfIB9mHTfATHCCNseliKoidIR8jlQYyMtsB5ZH5qwhYRz96mS8aofYLGdfFPpbApxBy9jzvSkgIYdwgpUG8A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<h3 class="font-headline-md text-sm text-white line-clamp-2">Velocity Protocol</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-emerald-400 text-xs font-bold">7.5 IMDB</span>
+<span class="bg-emerald-500 text-on-primary-container text-[10px] px-2 py-0.5 rounded font-black">4K</span>
+</div>
+</div>
+</div>
+<div class="group relative aspect-[2/3] rounded-xl overflow-hidden glass-panel scale-100 hover:scale-105 transition-all duration-300 cursor-pointer">
+<img alt="Ancient ruins" class="w-full h-full object-cover" data-alt="epic wide shot of ancient jungle ruins overgrown with vines under a moody thunderous sky with lightning flashes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHHnvhKatl2PWecU5CbZRB8R0CdoR-5418q_KaxKEeWhRgBjuVjk18ujuUvllBAGBY1PGb1EIiru1hBUTmWKYhMJrpk-KMGnyh0VzWZmWMiZKeAamrpbsfsLBHCZvWndc43LfMaSMH89dHxMrai_svKY0-n4MXQ6GfauaebxGifdosb13xTLpEFVIY6DCw7zuXf3vQEP2obX6PN21AKyHujIwWrbUd6ZF0skMcUHr_Fb5Mi1HQAOZWvsa6kF49W3j5Q65YS7Khew"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<h3 class="font-headline-md text-sm text-white line-clamp-2">The Lost Kingdom</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-emerald-400 text-xs font-bold">8.8 IMDB</span>
+<span class="bg-emerald-500 text-on-primary-container text-[10px] px-2 py-0.5 rounded font-black">FHD</span>
+</div>
+</div>
+</div>
+<!-- Additional rows... -->
+<div class="group relative aspect-[2/3] rounded-xl overflow-hidden glass-panel scale-100 hover:scale-105 transition-all duration-300 cursor-pointer">
+<img alt="Animated character" class="w-full h-full object-cover" data-alt="vibrant colorful 3D animated character in a magical forest with glowing plants and soft warm bokeh lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBqZGeLkSKGrQ-IjAIUzSdXH0b5jkMtMX9fh_xnN-k4Uw6T40ZgwbU3wavq2wNFWeDcN1HnT0WhrJVBiQE1HuU0LsvN43RYcpqzOCBDvjz7YNgJYvYF2b_HSGuw_bEGR6iZd3txgpDa5fy5nCfRtErMibVQ-UMLJxjaHydh4lWKbhBdbpRzWv8ydWZtfETywWeAtydx89TBrL6JGV2RXm_yOLhI2-N-n3dIkDSihhUw5r9gKMUeTnJSGloxEQoNjmAbdyiDcvOZw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<h3 class="font-headline-md text-sm text-white line-clamp-2">Forest Tales</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-emerald-400 text-xs font-bold">9.0 IMDB</span>
+<span class="bg-emerald-500 text-on-primary-container text-[10px] px-2 py-0.5 rounded font-black">4K</span>
+</div>
+</div>
+</div>
+<div class="group relative aspect-[2/3] rounded-xl overflow-hidden glass-panel scale-100 hover:scale-105 transition-all duration-300 cursor-pointer">
+<img alt="Cold landscape" class="w-full h-full object-cover" data-alt="dramatic snowy mountain peak at dusk with deep purple sky and a single bright star overhead" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9_bO1GL3gb1mLWYT6JhA7ZyZSCRO-ZC_DCV45PSoWqmZIuDxXD-ihwxQNaLKNgoYOLuxU6QcjRwjGLh3RWq05fMBoJF0bsk_funfVpqA6gcc5Vs9On9p_3YMmRZdmc49F-avJ9ksJ5DUMzs-lmyWrsGR1zzH9kAk4h-tPe8cWiYFlIKmw_bTn9FJE0TvqY4vmH-ez_Dy6pRq1ODjN9wvqOA_I82fkMeHit50sJ2uZNIBiyYoEZyAo5zuu2vBPkccOcN4mBKjlEA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<h3 class="font-headline-md text-sm text-white line-clamp-2">Subzero Zenith</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-emerald-400 text-xs font-bold">7.2 IMDB</span>
+<span class="bg-emerald-500 text-on-primary-container text-[10px] px-2 py-0.5 rounded font-black">FHD</span>
+</div>
+</div>
+</div>
+<div class="group relative aspect-[2/3] rounded-xl overflow-hidden glass-panel scale-100 hover:scale-105 transition-all duration-300 cursor-pointer">
+<img alt="Theater interior" class="w-full h-full object-cover" data-alt="interior of a classic luxury theater with red velvet seats and warm gold decorative accents in soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6eYqnhgjSo7LlEnH6nl2pO7rKUDmbBs5-6hLYjhm_AEUXRG1OveTIpoyjQvtSIxhi-NVWMU2T4gM7t-mp5Sh2cAIO7mO0JvFJE3Po91XXikzxdPmHZ0FLPCeJ0phb-mrHCvmZmKAckYGq-AQ8tONzUchKf0TeSw7LpYrMqP2ubq37TuXt1_MKmStsa-VNHUzSBaLFU2fw2hUAcsjbBXke9_ZuHQwI3SxzUBTRoVcDaGq_clojisnQgIoLOWxu3nd_ZvOSITkdnw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<h3 class="font-headline-md text-sm text-white line-clamp-2">Behind the Screen</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-emerald-400 text-xs font-bold">8.5 IMDB</span>
+<span class="bg-emerald-500 text-on-primary-container text-[10px] px-2 py-0.5 rounded font-black">4K</span>
+</div>
+</div>
+</div>
+<div class="group relative aspect-[2/3] rounded-xl overflow-hidden glass-panel scale-100 hover:scale-105 transition-all duration-300 cursor-pointer">
+<img alt="Dark stormy ocean" class="w-full h-full object-cover" data-alt="massive ocean waves crashing against jagged rocks during a heavy storm with dark moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuVIQ73WmDsONnwFd7Rf8EF2--swcnt7CpU1on6mMnjFaTzjmDKpBPZBDxa8bOeQ0DqyM2SprWpvrSOEiZppdcMbUCNqr4CnsPa3VgnGUpnOSF2tNNJTFBL1kSSMR8xainfyFSxsnNYZCZ4XLwkN45xGEmzY0PhxjDTiEFeIefm5VGpNrsLG3gJE6t9airnlcAbffnioa0YkTBKRAesuXBsZUbrpNVCihWzY-jnDf6JxVsoQ9a_d1x3FxLpSSST_uKtef5BItgYA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<h3 class="font-headline-md text-sm text-white line-clamp-2">Tidal Fury</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-emerald-400 text-xs font-bold">6.8 IMDB</span>
+<span class="bg-emerald-500 text-on-primary-container text-[10px] px-2 py-0.5 rounded font-black">FHD</span>
+</div>
+</div>
+</div>
+<div class="group relative aspect-[2/3] rounded-xl overflow-hidden glass-panel scale-100 hover:scale-105 transition-all duration-300 cursor-pointer">
+<img alt="Fantasy castle" class="w-full h-full object-cover" data-alt="ethereal gothic castle floating in a sky filled with golden clouds and rays of divine light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCbuwIUbhHteZW3Wpg2Bl4LTDoaGicSY4sUEUHHqBGNnjeUBf9dVeW4L5oVc3Y7PSjeei3qh-V9z8iZuSRpjPNJJRNqtW_Y6qcxtytHKwNGP-zCEaAjxIeNrx9uk0vj2naq6Tx9umXlM1LbxB0U7VgI-2v7tFjFnpeSOSbrXw0_8x9XNk7asG5OCfRcnw2VN5zq7TMzgh9diLe6H9Pe7a3LajrungAdPJLqrB4El_B1uyIiAzL2AGkpNhUuDMoG8y5y7PdNRIYFg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<h3 class="font-headline-md text-sm text-white line-clamp-2">Skyreach Citadel</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-emerald-400 text-xs font-bold">9.2 IMDB</span>
+<span class="bg-emerald-500 text-on-primary-container text-[10px] px-2 py-0.5 rounded font-black">4K</span>
+</div>
+</div>
+</div>
+<div class="group relative aspect-[2/3] rounded-xl overflow-hidden glass-panel scale-100 hover:scale-105 transition-all duration-300 cursor-pointer">
+<img alt="Jazz club" class="w-full h-full object-cover" data-alt="smoky jazz club interior with a lone saxophone on stage under a warm spotlight and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEQAiQ-_f1CMkVegCk0SoBl1sTxKK5puh-pXGCRFVI9VzpBEzxRV2icDC-UjPleLmfkb-9QkbVM-2wTnzZuqTCpHiUpfxr0n87TffC5pMNRQZ2mCT65WHaV9BZcViLxHbpkX4TiAV4Zl0Ty2wTFlujVffgtQHngbdskWbxmpOGaOfbCBEAXtH_Dr3Vh_7NHlJALaUTy9bu8gvtVXuAw7s9ygBJFSd2jyaD_NMjpWijCBG3XmIJLpSkRV9ZA_NA_21nw4bRMPjRqw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<h3 class="font-headline-md text-sm text-white line-clamp-2">Midnight Jazz</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-emerald-400 text-xs font-bold">8.3 IMDB</span>
+<span class="bg-emerald-500 text-on-primary-container text-[10px] px-2 py-0.5 rounded font-black">FHD</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Pagination -->
+<div class="mt-xl flex justify-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg glass-panel hover:bg-emerald-500 hover:text-on-primary-container transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-emerald-500 text-on-primary-container font-bold shadow-lg shadow-emerald-500/20">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg glass-panel hover:bg-emerald-500 hover:text-on-primary-container transition-all font-semibold">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg glass-panel hover:bg-emerald-500 hover:text-on-primary-container transition-all font-semibold">3</button>
+<span class="w-10 h-10 flex items-center justify-center text-slate-500">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg glass-panel hover:bg-emerald-500 hover:text-on-primary-container transition-all font-semibold">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg glass-panel hover:bg-emerald-500 hover:text-on-primary-container transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 full-width py-12 px-8 border-t border-white/5 font-['Be_Vietnam_Pro'] text-sm">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div class="text-lg font-bold text-emerald-500">CINEPHILE</div>
+<p class="text-slate-500 max-w-sm">© 2024 CINEPHILE. Designed for the ultimate theater experience. Your premium destination for movie discovery and reviews.</p>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-center">
+<a class="text-slate-500 hover:text-emerald-400 transition-colors hover:underline decoration-emerald-500 underline-offset-4 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-emerald-400 transition-colors hover:underline decoration-emerald-500 underline-offset-4 opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-emerald-400 transition-colors hover:underline decoration-emerald-500 underline-offset-4 opacity-80 hover:opacity-100" href="#">Help Center</a>
+<a class="text-slate-500 hover:text-emerald-400 transition-colors hover:underline decoration-emerald-500 underline-offset-4 opacity-80 hover:opacity-100" href="#">Cookies</a>
+<a class="text-slate-500 hover:text-emerald-400 transition-colors hover:underline decoration-emerald-500 underline-offset-4 opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

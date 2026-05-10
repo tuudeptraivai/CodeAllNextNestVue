@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Movie Detail - CINEPHILE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="./shared.css" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#4edea3",
+                        "on-primary": "#003824",
+                        "background": "#0b1326",
+                        "surface": "#0b1326",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#bbcabf",
+                        "primary-container": "#10b981",
+                        "on-primary-container": "#00422b",
+                        "secondary": "#95d3ba",
+                        "surface-container": "#171f33",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-highest": "#2d3449",
+                        "outline": "#86948a",
+                    },
+                    "fontFamily": {
+                        "body": ["Be Vietnam Pro", "sans-serif"],
+                        "display": ["Be Vietnam Pro", "sans-serif"],
+                        "label": ["Spline Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body text-on-surface bg-background selection:bg-primary selection:text-on-primary">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/70 backdrop-blur-2xl border-b border-white/10">
+        <div class="flex justify-between items-center px-6 h-16 md:h-20 max-w-[1440px] mx-auto">
+            <div class="flex items-center gap-4">
+                <a href="movie.html" class="active:scale-95 transition-transform duration-200 text-on-surface">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a>
+                <span class="text-xl font-black text-primary tracking-tighter italic uppercase">CINEPHILE</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-on-surface hidden md:block">cast</span>
+                <span class="material-symbols-outlined text-on-surface">share</span>
+                <span class="material-symbols-outlined text-on-surface">more_vert</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-16 pb-24 md:pb-12">
+        <!-- Hero Section / Player -->
+        <section class="relative w-full aspect-video max-w-[1440px] mx-auto bg-slate-900 md:rounded-b-3xl overflow-hidden shadow-2xl">
+            <img class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTgniOuySWFSJJArZkP98djdyotFFJEIWa2-MzdHwTAZiEco_3D9o9hVYmQUERNYelNxXvdyqlLud46iPv95VeKZ19gLFfIhnFwjid9ulMill_LuqVAvUBsvLKGBrVQrSUiaP6LO5laHPtiAesCcY0YZ26tDQv6agCA1f5v1q_vde4WtI9SVOpCKZ4N7LzoeVk-tVeQkjjkNJCcPjYqqPUDVJyUT9SG1nfZ7qFPquxBph-bILRXa2KXJMCUseRcfAfZ6DHNJtvlQ"/>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <button class="w-16 h-16 md:w-24 md:h-24 bg-primary text-on-primary rounded-full flex items-center justify-center emerald-glow active:scale-90 transition-transform">
+                    <span class="material-symbols-outlined text-4xl md:text-6xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                </button>
+            </div>
+            <!-- Progress Overlay -->
+            <div class="absolute bottom-0 left-0 w-full p-4 md:p-8 bg-gradient-to-t from-slate-950 to-transparent">
+                <div class="h-1.5 w-full bg-white/20 rounded-full mb-4 overflow-hidden">
+                    <div class="h-full w-1/3 bg-primary bloom-effect"></div>
+                </div>
+                <div class="flex justify-between items-center text-white text-xs md:text-sm">
+                    <div class="flex items-center gap-4 md:gap-8">
+                        <span class="material-symbols-outlined cursor-pointer hover:text-primary">play_arrow</span>
+                        <span class="material-symbols-outlined cursor-pointer hover:text-primary">skip_next</span>
+                        <span class="hidden md:block material-symbols-outlined cursor-pointer hover:text-primary">volume_up</span>
+                        <span>24:15 / 1:42:00</span>
+                    </div>
+                    <div class="flex items-center gap-4 md:gap-8">
+                        <span class="material-symbols-outlined cursor-pointer hover:text-primary">settings</span>
+                        <span class="material-symbols-outlined cursor-pointer hover:text-primary">fullscreen</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movie Info -->
+        <section class="px-6 md:px-16 py-8 max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-8 space-y-8">
+                <div class="space-y-4">
+                    <div class="flex flex-wrap items-center gap-4">
+                        <h1 class="text-3xl md:text-5xl font-display text-white">Nụ Hôn Siren</h1>
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 rounded bg-white/10 text-primary font-label-sm border border-primary/20">4K</span>
+                            <span class="px-2 py-0.5 rounded bg-white/10 text-white/70 font-label-sm border border-white/10">16+</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 text-on-surface-variant text-sm font-semibold uppercase tracking-wider">
+                        <span>2024</span>
+                        <span class="w-1 h-1 rounded-full bg-outline"></span>
+                        <span>102 mins</span>
+                        <span class="w-1 h-1 rounded-full bg-outline"></span>
+                        <div class="flex items-center gap-1 text-primary">
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span>9.4</span>
+                        </div>
+                    </div>
+                    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
+                        Một câu chuyện tình đầy mê hoặc giữa một chàng trai trẻ đam mê đại dương và một mỹ nhân ngư bí ẩn. Khi bí mật về thân thế của cô dần được hé lộ, họ phải đối mặt với những thế lực cổ xưa đang đe dọa chia cách tình yêu của mình.
+                    </p>
+                </div>
+
+                <!-- Episode List -->
+                <div class="space-y-6">
+                    <h2 class="text-xl md:text-2xl font-bold text-white border-l-4 border-primary pl-4">Tập phim</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3">
+                        <button class="py-3 px-4 rounded-lg bg-primary text-on-primary font-bold shadow-lg shadow-primary/20">Tập 1</button>
+                        <button class="py-3 px-4 rounded-lg glass-card text-on-surface hover:bg-white/10 transition-all">Tập 2</button>
+                        <button class="py-3 px-4 rounded-lg glass-card text-on-surface hover:bg-white/10 transition-all">Tập 3</button>
+                        <button class="py-3 px-4 rounded-lg glass-card text-on-surface hover:bg-white/10 transition-all">Tập 4</button>
+                    </div>
+                </div>
+
+                <!-- Cast (Mobile) -->
+                <div class="lg:hidden space-y-6">
+                    <h2 class="text-xl font-bold text-white border-l-4 border-primary pl-4">Diễn viên</h2>
+                    <div class="flex gap-4 overflow-x-auto pb-2 hide-scrollbar">
+                        <div class="flex flex-col items-center gap-2 shrink-0 w-20">
+                            <img class="w-16 h-16 rounded-full object-cover border-2 border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm2AcD5soduXu6qRv6XS8dQFQsKsXDcesnoc2cFC2t8FH36kF7JOSMpvzZI7nMkB4_fzxqhTudjLR6RBbCCVMHJWNrPiiUG4eeEPOcLV6CyY_JNEkHAZsf2-bK8YU67q5ZmLfpoXzuwoIijmGiLxeDTwhS8eIyglpFTVzHo0tz2pF89LSB6QkzZALkbDxLUb_l2A8g1jEXnG4v34yLGHt7Pzk0L_KyhQ5rC-VL9IPkj-UacXVeW_G4e7YU8rM_be0LL8yP0yp_gQ"/>
+                            <span class="text-[10px] font-bold text-center">Lee Dong Wook</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 shrink-0 w-20">
+                            <img class="w-16 h-16 rounded-full object-cover border-2 border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU6A54_wOM-qvWTDkrqGM8jKpwGWDN9GzZFx6LrRqTQzAkh4fCe_1c5FyEck8zOLqS3NUCN5lA8YFtrl3iu4VPoef7H3wj13sYZUZZAjKsP84mmTn99F-fUhIMDrtKf5yA9V3fGkmSlfexg8jQS_cMr63m7A-WlvctXePK43m5OPESNBk-pzyVqa5HNzWadQDXS9NvRpegjXUCesMCNZQb9THLVAx0vGQxIjbMUE2WKGx1d7nUNyysYnzKlIGyiW6uYfYX4FBLlQ"/>
+                            <span class="text-[10px] font-bold text-center">Jun Ji Hyun</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 shrink-0 w-20">
+                            <img class="w-16 h-16 rounded-full object-cover border-2 border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8jGXXuJkJtTNHdEniR49hmkSHRG--Z0SUhAGuWzjJgT_O7H7JxSZNVBvyYSQ1653Jqj5zoOZrw8ImIqPNfH_NUVUKIjfT48kwTXrgNy1rYwL1W014bd_e5XnIzsTna67tuyW9er4MSVQFs6nxOATb6iDsIp_9Q-496mDBrD9z5UNsZUDNMuw7EEihVNbtq3_mreJbWMtqzfz1sn1KdH-VIpKiLrnD1u53j31g20y4Yda3vNIX5xPoh58P4sEhY8KTUA14OsTJJw"/>
+                            <span class="text-[10px] font-bold text-center">Gong Yoo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discussion -->
+                <div class="space-y-6">
+                    <h2 class="text-xl md:text-2xl font-bold text-white border-l-4 border-primary pl-4">Bình luận</h2>
+                    <div class="glass-panel p-4 md:p-6 rounded-2xl flex gap-4">
+                        <div class="w-10 h-10 rounded-full bg-slate-800 overflow-hidden shrink-0">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM4Seaas6s9xTq9H4TP9-4AFpXJNOGCOKhdKTSz8a5k2SQfq_xoQtbMYnbBFH0jNE9IRN5R0YI2KL_XaumzGa-vFieOZUuIYiQafkT3mhG1RoxJg5x0aNKtwAXcZtVS-uISFtFnyRff536zcQ5H903bXjnKmgOvWvUu9KcSETQT1y_Knm4qBHottxWjws2gKnzcHUnL9yFqnrVvPNeD4VYvuZKjZ_QQxURTZHXN7ztt1oJa_gjZHBDce4fJbuCZaweu0R6gZngpw" class="w-full h-full object-cover"/>
+                        </div>
+                        <div class="flex-1 space-y-4">
+                            <textarea class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white placeholder-slate-500 focus:ring-1 focus:ring-primary min-h-[100px] resize-none" placeholder="Viết bình luận..."></textarea>
+                            <div class="flex justify-end">
+                                <button class="bg-primary text-on-primary px-8 py-2 rounded-xl font-bold">Gửi</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar (Desktop) -->
+            <aside class="hidden lg:block lg:col-span-4 space-y-8">
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-bold text-white border-l-4 border-primary pl-4">Diễn viên</h2>
+                    <div class="space-y-4">
+                        <div class="glass-panel p-4 rounded-xl flex items-center gap-4 hover:bg-white/5 transition-colors cursor-pointer group">
+                            <img class="w-14 h-14 rounded-full object-cover border-2 border-primary/20 group-hover:border-primary transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm2AcD5soduXu6qRv6XS8dQFQsKsXDcesnoc2cFC2t8FH36kF7JOSMpvzZI7nMkB4_fzxqhTudjLR6RBbCCVMHJWNrPiiUG4eeEPOcLV6CyY_JNEkHAZsf2-bK8YU67q5ZmLfpoXzuwoIijmGiLxeDTwhS8eIyglpFTVzHo0tz2pF89LSB6QkzZALkbDxLUb_l2A8g1jEXnG4v34yLGHt7Pzk0L_KyhQ5rC-VL9IPkj-UacXVeW_G4e7YU8rM_be0LL8yP0yp_gQ"/>
+                            <div>
+                                <h3 class="text-white font-bold">Lee Dong Wook</h3>
+                                <p class="text-slate-500 text-sm">Nam chính</p>
+                            </div>
+                        </div>
+                        <div class="glass-panel p-4 rounded-xl flex items-center gap-4 hover:bg-white/5 transition-colors cursor-pointer group">
+                            <img class="w-14 h-14 rounded-full object-cover border-2 border-white/10 group-hover:border-primary transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU6A54_wOM-qvWTDkrqGM8jKpwGWDN9GzZFx6LrRqTQzAkh4fCe_1c5FyEck8zOLqS3NUCN5lA8YFtrl3iu4VPoef7H3wj13sYZUZZAjKsP84mmTn99F-fUhIMDrtKf5yA9V3fGkmSlfexg8jQS_cMr63m7A-WlvctXePK43m5OPESNBk-pzyVqa5HNzWadQDXS9NvRpegjXUCesMCNZQb9THLVAx0vGQxIjbMUE2WKGx1d7nUNyysYnzKlIGyiW6uYfYX4FBLlQ"/>
+                            <div>
+                                <h3 class="text-white font-bold">Jun Ji Hyun</h3>
+                                <p class="text-slate-500 text-sm">Nữ chính</p>
+                            </div>
+                        </div>
+                        <div class="glass-panel p-4 rounded-xl flex items-center gap-4 hover:bg-white/5 transition-colors cursor-pointer group">
+                            <img class="w-14 h-14 rounded-full object-cover border-2 border-white/10 group-hover:border-primary transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8jGXXuJkJtTNHdEniR49hmkSHRG--Z0SUhAGuWzjJgT_O7H7JxSZNVBvyYSQ1653Jqj5zoOZrw8ImIqPNfH_NUVUKIjfT48kwTXrgNy1rYwL1W014bd_e5XnIzsTna67tuyW9er4MSVQFs6nxOATb6iDsIp_9Q-496mDBrD9z5UNsZUDNMuw7EEihVNbtq3_mreJbWMtqzfz1sn1KdH-VIpKiLrnD1u53j31g20y4Yda3vNIX5xPoh58P4sEhY8KTUA14OsTJJw"/>
+                            <div>
+                                <h3 class="text-white font-bold">Gong Yoo</h3>
+                                <p class="text-slate-500 text-sm">Phản diện</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-bold text-white border-l-4 border-primary pl-4">Đề xuất</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiHcF6LWA2J92uKwxnI5KvLdQhTV3tjJuceHIjcRME04xBPL9zePUET_-9-lG2AskJ-I--IQXszaMu7jHSuGSPAc55F88P1Bq2XW5GNkhcejBnTnOmL_WREV6NeNlDIshMvzakg_kjFNeVp9MZ4MSWGy0a7v18lGLz4L_Ud8RB1WXQm3rPEmRQA_U-Fo-VSaRJc05VOAXmpb6J9lL5pf9FhQM3-4Y4e7ICxigkIAgqbJjCCr9eQX4WLs0-4C62R8TViktlb_C37w"/>
+                        </div>
+                        <div class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMPIUMBKx49tJMNrtZNDUROTMlV4LZbjFuQBEPuY-k7nmVTKhjLUF5WVFTdbLSIPcAaBTBchNLziSvpXZw2ca5bUe1a1wW0Y-wYTvwSViYFsAPZF3VavixdmKkbdqdWdTjBnhL5mnNl0TW3yvApR5yIMn5-4uTL84htqs2OdbG3MnA_JkquP54T1j31THRMlLHlC-YuI2CEX_jQexF42rHcT6-iXSMIfUMQHN47sd9wSen6R4nGxZRaFZysbstG5elvjgDuN1IHw"/>
+                        </div>
+                        <div class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcf10EuDY6LQK12u3gE5uoiCJSF6ddZbze1Ho8A_wfZh45bQTYYvgaMZnGThpjNGX3maSsssU8i7nCw7XEa1aYjvmhtjfwe0vtaOWas8kG_EZVU_88CkZBepxur1mXsckKhtnuX9znZjVuXBoNSXxw-U8WjLaz62qttj9V4SSdmIra4G2JlW0blylz7hitlvQj3XHnK9eOkhQtpKMrlRu-JWkDo_cy3j2CGld0n5OL3eovWctzKrHeoSQN_vAxjiHwsmWfgoAz1w"/>
+                        </div>
+                        <div class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGuy757yGAlehTiCUCwPpSiS_ngwLxORFkruOqnd4yME79szTUiFd-NwiY8OlGT0oebsD0fgFBJ8bqQN0WKPumZTKfFnBEkpNiwFbcr_7Pvz-45MXtcLVCZMHMrALjHQppWuZYFBJwo9LqiZzgG_lVnjpnIikroxy9Pv1DnP4U-pGSrNp3igeseuD-IJhzCstJRu0U_A7L0QI9U9NU3vgUkQ1ovpZQEMNcBlvhbeMElkzeKJigMvv8wgZ4S4nrarOLn2XSgrKgwg"/>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-slate-950/80 backdrop-blur-2xl border-t border-white/10 rounded-t-2xl">
+        <a class="flex flex-col items-center justify-center text-slate-500" href="index.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-primary" href="movie.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">movie</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Movies</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="#">
+            <span class="material-symbols-outlined">explore</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Discovery</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="profile.html">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Account</span>
+        </a>
+    </nav>
+</body>
+</html>

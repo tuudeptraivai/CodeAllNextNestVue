@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Movies - CINEPHILE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="./shared.css" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#4edea3",
+                        "on-primary": "#003824",
+                        "background": "#0b1326",
+                        "surface": "#0b1326",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#bbcabf",
+                        "primary-container": "#10b981",
+                        "on-primary-container": "#00422b",
+                        "secondary": "#95d3ba",
+                        "surface-container": "#171f33",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-highest": "#2d3449",
+                        "outline": "#86948a",
+                    },
+                    "fontFamily": {
+                        "body": ["Be Vietnam Pro", "sans-serif"],
+                        "display": ["Be Vietnam Pro", "sans-serif"],
+                        "label": ["Spline Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body text-on-surface bg-background selection:bg-primary selection:text-on-primary">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-2xl border-b border-white/10">
+        <div class="flex justify-between items-center px-6 md:px-8 py-4 max-w-[1440px] mx-auto h-16 md:h-20">
+            <div class="flex items-center gap-12">
+                <span class="text-xl md:text-2xl font-black italic tracking-tighter text-primary uppercase font-display">CINEPHILE</span>
+                <nav class="hidden md:flex gap-8">
+                    <a class="text-slate-400 font-medium hover:text-slate-100 transition-colors" href="index.html">Home</a>
+                    <a class="text-primary font-semibold border-b-2 border-primary pb-1" href="movie.html">Movies</a>
+                    <a class="text-slate-400 font-medium hover:text-slate-100 transition-colors" href="#">TV Shows</a>
+                    <a class="text-slate-400 font-medium hover:text-slate-100 transition-colors" href="actors.html">Actors</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex items-center bg-white/10 rounded-full px-4 py-1.5 border border-white/5">
+                    <span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+                    <input class="bg-transparent border-none focus:ring-0 text-sm text-white placeholder-slate-500 w-48" placeholder="Search movies..." type="text"/>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary border border-primary/20">
+                    <span class="material-symbols-outlined text-sm">person</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-24 md:pb-12 max-w-[1440px] mx-auto px-6 md:px-16">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Sidebar Filters (Desktop) -->
+            <aside class="hidden lg:block space-y-8">
+                <div class="glass-panel p-6 rounded-2xl space-y-8 border border-white/5">
+                    <div>
+                        <h3 class="text-white font-bold mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm">filter_list</span>
+                            Thể Loại
+                        </h3>
+                        <div class="space-y-3">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" class="rounded bg-white/5 border-white/10 text-primary focus:ring-primary"/>
+                                <span class="text-sm text-on-surface-variant group-hover:text-white transition-colors">Hành Động</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" class="rounded bg-white/5 border-white/10 text-primary focus:ring-primary"/>
+                                <span class="text-sm text-on-surface-variant group-hover:text-white transition-colors">Kinh Dị</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" class="rounded bg-white/5 border-white/10 text-primary focus:ring-primary"/>
+                                <span class="text-sm text-on-surface-variant group-hover:text-white transition-colors">Viễn Tưởng</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" class="rounded bg-white/5 border-white/10 text-primary focus:ring-primary"/>
+                                <span class="text-sm text-on-surface-variant group-hover:text-white transition-colors">Lãng Mạn</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold mb-4">Sắp Xếp</h3>
+                        <select class="w-full bg-white/5 border-white/10 rounded-xl px-4 py-2 text-sm text-white focus:ring-primary focus:border-primary">
+                            <option>Mới nhất</option>
+                            <option>Xem nhiều nhất</option>
+                            <option>Đánh giá cao</option>
+                        </select>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Mobile Quick Filters -->
+            <div class="lg:hidden flex gap-4 overflow-x-auto pb-2 hide-scrollbar">
+                <button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-bold whitespace-nowrap">Tất cả</button>
+                <button class="px-4 py-2 rounded-lg glass-card text-white/70 whitespace-nowrap">Hành Động</button>
+                <button class="px-4 py-2 rounded-lg glass-card text-white/70 whitespace-nowrap">Viễn Tưởng</button>
+                <button class="px-4 py-2 rounded-lg glass-card text-white/70 whitespace-nowrap">Kinh Dị</button>
+            </div>
+
+            <!-- Movie Grid -->
+            <div class="lg:col-span-3 space-y-12">
+                <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-gutter">
+                    <!-- Movie Card 1 -->
+                    <a href="movie-detail.html" class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiHcF6LWA2J92uKwxnI5KvLdQhTV3tjJuceHIjcRME04xBPL9zePUET_-9-lG2AskJ-I--IQXszaMu7jHSuGSPAc55F88P1Bq2XW5GNkhcejBnTnOmL_WREV6NeNlDIshMvzakg_kjFNeVp9MZ4MSWGy0a7v18lGLz4L_Ud8RB1WXQm3rPEmRQA_U-Fo-VSaRJc05VOAXmpb6J9lL5pf9FhQM3-4Y4e7ICxigkIAgqbJjCCr9eQX4WLs0-4C62R8TViktlb_C37w"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <span class="text-primary font-bold text-xs">2024 • Action</span>
+                            <h3 class="text-white font-bold truncate">Nụ Hôn Siren</h3>
+                            <div class="flex items-center gap-1 mt-1">
+                                <span class="material-symbols-outlined text-yellow-400 text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="text-white/80 text-xs">8.9</span>
+                            </div>
+                        </div>
+                        <div class="absolute top-2 right-2 glass-card px-2 py-1 rounded text-[10px] font-bold text-primary lg:hidden">8.9</div>
+                    </a>
+                    <a href="movie-detail.html" class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZYcpDYg4tOXow04D0ozIX34wXosiI4jD47KyRYVNfmdWemteYaOSDKZVlKPNL4_GW80rZYtkq3rFCZzCY43tkcDOwpojNyg7jxeHpw-cx884g_wb6o7dxdHzvCFe-4R8ZrbDVB7PX7btF5m3Ej1iGn_iKKpqPd8oaaQEPY4ufRrwJCZwTtW8STR8okcWw-Ni55yu4Uh9XUPuc65TolsAJh2q9KHfsBBNfM3Rh5suOKEF0A2c8HqOxkIl51shydykBTAeP4TGv8A"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <span class="text-primary font-bold text-xs">2024 • Thriller</span>
+                            <h3 class="text-white font-bold truncate">Vây Hãm</h3>
+                        </div>
+                    </a>
+                    <a href="movie-detail.html" class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr4MFDyNU64DgTAYsosherx8gTinT1WKHQ6LhaWwLubn1RJUQMRMLUQsbKYUGckdaSlz7QMyP5vmVjULZ2Bd-p9P1glweNmI8p4qwySyxTG_pVbgFcM2ebDT4W8HY45JCLQ-VtD76Dq4d5zBlf9kJykxCRVI9uCLMy36MwQXECka-OUonUf7Xub4KSIUqchdRQXWaZpdDe8J7QxkFC8dUCbrcCRiIvXd3tKOWJYcnVSL9p4OBdXhbSEdjGo8LtsJB37ZhtS1g"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <span class="text-primary font-bold text-xs">2023 • Romance</span>
+                            <h3 class="text-white font-bold truncate">Hương Vị Tình Yêu</h3>
+                        </div>
+                    </a>
+                    <a href="movie-detail.html" class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaCKT3dlgxw7xzGYxesCn6C3jLc8fyQOr6R_yJu73rg6lH8OSgDigi_6pYXV2T-9no4AqWn51UZRDm5sEHjluL_AWqQHOL9yzkdeFrfUS6T3KRP3bP2F5rRWQaKT4qm8eV9ZsnfC3iljOIKKX5i6aDCnHQZxIQjhEldsfuQVRANodr0UcEB0_tSiMK3YUwxzZYKzAeaKxKvEvza2XLdrjG0Y4Z-ZAnEqyH5YRaCPjFkOBV1KEII63lC7WvyUMcSjNFnuvvQ4W0Yg"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <span class="text-primary font-bold text-xs">2024 • Mystery</span>
+                            <h3 class="text-white font-bold truncate">Kẻ Săn Đuổi</h3>
+                        </div>
+                    </a>
+                    <a href="movie-detail.html" class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAxJr6f3oNcKJvRCfJ9ZQ3ebeiO5S7S8nX06NEx_8vxfAK7PoK-QP5GmtuAFVLtVFxh-jB18k0Q_iaybRVs1eMLjUTO6S3G6W1s4ttzA3OfFKLyQAXSIsdN9TgjMCEvCuXZNlVi3OYu5KPUuIBFkewtIToyPIMnlgevLPmRpNw13HIhne8LrNMkKQHXsUFZ1rOcwo9FDLhWNmd02p1GvCDlYGuis6Ki1YDnbKxCgcxEQMSf2DeucCenDZ57i8kAIgxR_L4R6mW6w"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <span class="text-primary font-bold text-xs">2024 • Drama</span>
+                            <h3 class="text-white font-bold truncate">Cung Điện Rồng</h3>
+                        </div>
+                    </a>
+                    <a href="movie-detail.html" class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKYS1rATCAOxHSpUJCSXPUx46m1AU7pBgZOBpH5S-L6QrWCr3PrPGQ-uVMmhz682NA8ZA8FYsDYJSTrcvaAYPO17BK3FO_x7-GL1fadiKJUtru09v95CQGj5N0qHR6zYGoTQKGLen4sMV9gPn7lcFcf2qZlGN6o9i3MnymIGYeLGrpfcgGPMbR3nnqJoq3Jlo_w4X_8JZNexRimX0jz8BvNe8Gm83JubSVil9gx-k1WUe-Bb_zks2bjIHRZID66-v8LZ5IHandvg"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <span class="text-primary font-bold text-xs">2024 • Sci-Fi</span>
+                            <h3 class="text-white font-bold truncate">2099</h3>
+                        </div>
+                    </a>
+                    <a href="movie-detail.html" class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9c1sgrpKIc6dtXpx6544Y1z632j0HeOZQzcTRJEVkXdXl44dDtJgMUMG9VLvm0MSR5JVP8RfZcWm8eIm_-3DWl3-E-9oKDiI1jwQFfeZ4luiCISCBueAszEeAB83m9zhklC8AEYuHAdb4AKyUnHn4bnaGbboFvSWEvEKB86AuXa42OJsL0Es4jGn4y2hE4sckh1QzAueGour_QtxXU4RD1vMdtVuNlCKzDdS9NWGDXzGpj-SzwI4qjF1GC6tKURxJGDCPsHqpNA"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <span class="text-primary font-bold text-xs">2024 • Horror</span>
+                            <h3 class="text-white font-bold truncate">Tiếng Gọi Đêm</h3>
+                        </div>
+                    </a>
+                    <a href="movie-detail.html" class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByF2GHOXfZ46JwKyUQA5LKM0ug7yf9qkDHDaOrdbUiZ183q03YiK19xn71NTU7PwR4Djn6z0TEtdJq4GXL7mpi4uG0MeFTOYvTHYKRAbxpLFtRl32mZKjfdm90JiraxNxgtsL4jbgyuaQuHiS2NQWOS6iFtp8xezpIEPhqChJ3AZ1WOQwSZqIthhx9ZhFf5T_UIsMN_EBjF2dx1DE6bAn_XZEFg9EnvsiYDuimfDORbvEYvwjhNqVp1rFO9eJUdHUeCq66DSOlUA"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <span class="text-primary font-bold text-xs">2024 • Comedy</span>
+                            <h3 class="text-white font-bold truncate">Tìm Kiếm Tình Yêu</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center items-center gap-4 pt-12">
+                    <button class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-slate-500 cursor-not-allowed">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold">1</button>
+                        <button class="w-10 h-10 rounded-full glass-card text-white hover:bg-white/10 transition-colors">2</button>
+                        <button class="w-10 h-10 rounded-full glass-card text-white hover:bg-white/10 transition-colors">3</button>
+                    </div>
+                    <button class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-slate-950/80 backdrop-blur-2xl border-t border-white/10 rounded-t-2xl">
+        <a class="flex flex-col items-center justify-center text-slate-500" href="index.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-primary" href="movie.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">movie</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Movies</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="#">
+            <span class="material-symbols-outlined">explore</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Discovery</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="profile.html">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Account</span>
+        </a>
+    </nav>
+</body>
+</html>

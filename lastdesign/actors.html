@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Actors - CINEPHILE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="./shared.css" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#4edea3",
+                        "on-primary": "#003824",
+                        "background": "#0b1326",
+                        "surface": "#0b1326",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#bbcabf",
+                        "primary-container": "#10b981",
+                        "on-primary-container": "#00422b",
+                        "secondary": "#95d3ba",
+                        "surface-container": "#171f33",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-highest": "#2d3449",
+                        "outline": "#86948a",
+                    },
+                    "fontFamily": {
+                        "body": ["Be Vietnam Pro", "sans-serif"],
+                        "display": ["Be Vietnam Pro", "sans-serif"],
+                        "label": ["Spline Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body text-on-surface bg-background selection:bg-primary selection:text-on-primary">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-2xl border-b border-white/10">
+        <div class="flex justify-between items-center px-6 md:px-8 py-4 max-w-[1440px] mx-auto h-16 md:h-20">
+            <div class="flex items-center gap-12">
+                <span class="text-xl md:text-2xl font-black italic tracking-tighter text-primary uppercase font-display">CINEPHILE</span>
+                <nav class="hidden md:flex gap-8">
+                    <a class="text-slate-400 font-medium hover:text-slate-100 transition-colors" href="index.html">Movies</a>
+                    <a class="text-slate-400 font-medium hover:text-slate-100 transition-colors" href="#">TV Shows</a>
+                    <a class="text-primary font-semibold border-b-2 border-primary pb-1" href="actors.html">Actors</a>
+                    <a class="text-slate-400 font-medium hover:text-slate-100 transition-colors" href="#">Discover</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="md:hidden text-slate-400 hover:text-primary">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <div class="hidden md:flex items-center bg-white/10 rounded-full px-4 py-1.5 border border-white/5">
+                    <span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+                    <input class="bg-transparent border-none focus:ring-0 text-sm text-white placeholder-slate-500 w-48" placeholder="Search actors..." type="text"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-24 md:pb-12">
+        <section class="px-6 md:px-16 py-8 max-w-[1440px] mx-auto">
+            <h1 class="text-3xl md:text-5xl font-display text-white mb-4">Diễn Viên</h1>
+            <p class="text-on-surface-variant max-w-2xl">Khám phá thông tin về các diễn viên tài năng và các bộ phim họ đã tham gia.</p>
+        </section>
+
+        <section class="px-6 md:px-16 max-w-[1440px] mx-auto">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 md:gap-gutter">
+                <!-- Actor Card 1 -->
+                <a href="actor-detail.html" class="group flex flex-col items-center space-y-4 cursor-pointer">
+                    <div class="relative w-full aspect-square rounded-full overflow-hidden border-4 border-white/5 group-hover:border-primary transition-all duration-300">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm2AcD5soduXu6qRv6XS8dQFQsKsXDcesnoc2cFC2t8FH36kF7JOSMpvzZI7nMkB4_fzxqhTudjLR6RBbCCVMHJWNrPiiUG4eeEPOcLV6CyY_JNEkHAZsf2-bK8YU67q5ZmLfpoXzuwoIijmGiLxeDTwhS8eIyglpFTVzHo0tz2pF89LSB6QkzZALkbDxLUb_l2A8g1jEXnG4v34yLGHt7Pzk0L_KyhQ5rC-VL9IPkj-UacXVeW_G4e7YU8rM_be0LL8yP0yp_gQ"/>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-white font-bold text-sm md:text-base group-hover:text-primary transition-colors">Lee Dong Wook</h3>
+                        <p class="text-slate-500 text-[10px] md:text-xs">42 Phim</p>
+                    </div>
+                </a>
+                <a href="actor-detail.html" class="group flex flex-col items-center space-y-4 cursor-pointer">
+                    <div class="relative w-full aspect-square rounded-full overflow-hidden border-4 border-white/5 group-hover:border-primary transition-all duration-300">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU6A54_wOM-qvWTDkrqGM8jKpwGWDN9GzZFx6LrRqTQzAkh4fCe_1c5FyEck8zOLqS3NUCN5lA8YFtrl3iu4VPoef7H3wj13sYZUZZAjKsP84mmTn99F-fUhIMDrtKf5yA9V3fGkmSlfexg8jQS_cMr63m7A-WlvctXePK43m5OPESNBk-pzyVqa5HNzWadQDXS9NvRpegjXUCesMCNZQb9THLVAx0vGQxIjbMUE2WKGx1d7nUNyysYnzKlIGyiW6uYfYX4FBLlQ"/>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-white font-bold text-sm md:text-base group-hover:text-primary transition-colors">Jun Ji Hyun</h3>
+                        <p class="text-slate-500 text-[10px] md:text-xs">28 Phim</p>
+                    </div>
+                </a>
+                <a href="actor-detail.html" class="group flex flex-col items-center space-y-4 cursor-pointer">
+                    <div class="relative w-full aspect-square rounded-full overflow-hidden border-4 border-white/5 group-hover:border-primary transition-all duration-300">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8jGXXuJkJtTNHdEniR49hmkSHRG--Z0SUhAGuWzjJgT_O7H7JxSZNVBvyYSQ1653Jqj5zoOZrw8ImIqPNfH_NUVUKIjfT48kwTXrgNy1rYwL1W014bd_e5XnIzsTna67tuyW9er4MSVQFs6nxOATb6iDsIp_9Q-496mDBrD9z5UNsZUDNMuw7EEihVNbtq3_mreJbWMtqzfz1sn1KdH-VIpKiLrnD1u53j31g20y4Yda3vNIX5xPoh58P4sEhY8KTUA14OsTJJw"/>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-white font-bold text-sm md:text-base group-hover:text-primary transition-colors">Gong Yoo</h3>
+                        <p class="text-slate-500 text-[10px] md:text-xs">35 Phim</p>
+                    </div>
+                </a>
+                <a href="actor-detail.html" class="group flex flex-col items-center space-y-4 cursor-pointer">
+                    <div class="relative w-full aspect-square rounded-full overflow-hidden border-4 border-white/5 group-hover:border-primary transition-all duration-300">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH0Y4U1I7l18X3Y6Uo7Jp9D6U8vU7mZ8n6yL7O9vU5k8t2r5c2b3v4x5y6z7"/>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-white font-bold text-sm md:text-base group-hover:text-primary transition-colors">Kim Go Eun</h3>
+                        <p class="text-slate-500 text-[10px] md:text-xs">15 Phim</p>
+                    </div>
+                </a>
+                <a href="actor-detail.html" class="group flex flex-col items-center space-y-4 cursor-pointer">
+                    <div class="relative w-full aspect-square rounded-full overflow-hidden border-4 border-white/5 group-hover:border-primary transition-all duration-300">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkRz6r5p4m3q2w1e0y9u8i7o6p5a4s3d2f1g0h9j8k7l6m5n4b3v2c1"/>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-white font-bold text-sm md:text-base group-hover:text-primary transition-colors">Song Joong Ki</h3>
+                        <p class="text-slate-500 text-[10px] md:text-xs">30 Phim</p>
+                    </div>
+                </a>
+                <a href="actor-detail.html" class="group flex flex-col items-center space-y-4 cursor-pointer">
+                    <div class="relative w-full aspect-square rounded-full overflow-hidden border-4 border-white/5 group-hover:border-primary transition-all duration-300">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv7c8x9z0y1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2"/>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-white font-bold text-sm md:text-base group-hover:text-primary transition-colors">IU (Lee Ji Eun)</h3>
+                        <p class="text-slate-500 text-[10px] md:text-xs">12 Phim</p>
+                    </div>
+                </a>
+                <a href="actor-detail.html" class="group flex flex-col items-center space-y-4 cursor-pointer">
+                    <div class="relative w-full aspect-square rounded-full overflow-hidden border-4 border-white/5 group-hover:border-primary transition-all duration-300">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA8r7e6w5q4p3o2i1u0y9t8r7e6w5q4p3o2i1u0y9t8r7e6w5q4p3o2i1u"/>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-white font-bold text-sm md:text-base group-hover:text-primary transition-colors">Park Seo Joon</h3>
+                        <p class="text-slate-500 text-[10px] md:text-xs">25 Phim</p>
+                    </div>
+                </a>
+                <a href="actor-detail.html" class="group flex flex-col items-center space-y-4 cursor-pointer">
+                    <div class="relative w-full aspect-square rounded-full overflow-hidden border-4 border-white/5 group-hover:border-primary transition-all duration-300">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw5e4r3w2q1p0o9i8u7y6t5r4e3w2q1p0o9i8u7y6t5r4e3w2q1p0o9i8u"/>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-white font-bold text-sm md:text-base group-hover:text-primary transition-colors">Han So Hee</h3>
+                        <p class="text-slate-500 text-[10px] md:text-xs">10 Phim</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center items-center gap-4 pt-16">
+                <button class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <div class="flex gap-2">
+                    <button class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold">1</button>
+                    <button class="w-10 h-10 rounded-full glass-card text-white hover:bg-white/10 transition-colors">2</button>
+                    <button class="w-10 h-10 rounded-full glass-card text-white hover:bg-white/10 transition-colors">3</button>
+                </div>
+                <button class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-slate-950/80 backdrop-blur-2xl border-t border-white/10 rounded-t-2xl">
+        <a class="flex flex-col items-center justify-center text-slate-500" href="index.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="movie.html">
+            <span class="material-symbols-outlined">movie</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Movies</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-primary" href="actors.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Actors</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="profile.html">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Account</span>
+        </a>
+    </nav>
+</body>
+</html>

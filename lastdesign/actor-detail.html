@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Actor Detail - CINEPHILE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="./shared.css" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#4edea3",
+                        "on-primary": "#003824",
+                        "background": "#0b1326",
+                        "surface": "#0b1326",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#bbcabf",
+                        "primary-container": "#10b981",
+                        "on-primary-container": "#00422b",
+                        "secondary": "#95d3ba",
+                        "surface-container": "#171f33",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-highest": "#2d3449",
+                        "outline": "#86948a",
+                    },
+                    "fontFamily": {
+                        "body": ["Be Vietnam Pro", "sans-serif"],
+                        "display": ["Be Vietnam Pro", "sans-serif"],
+                        "label": ["Spline Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body text-on-surface bg-background selection:bg-primary selection:text-on-primary">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/70 backdrop-blur-2xl border-b border-white/10">
+        <div class="flex justify-between items-center px-6 h-16 md:h-20 max-w-[1440px] mx-auto">
+            <div class="flex items-center gap-4">
+                <a href="actors.html" class="active:scale-95 transition-transform duration-200 text-on-surface">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a>
+                <span class="text-xl font-black text-primary tracking-tighter italic uppercase">CINEPHILE</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-on-surface">share</span>
+                <span class="material-symbols-outlined text-on-surface">more_vert</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-24 md:pb-12">
+        <section class="px-6 md:px-16 py-8 max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Actor Profile Sidebar -->
+            <div class="lg:col-span-4 space-y-8 flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="relative w-48 h-48 md:w-full md:aspect-square rounded-3xl overflow-hidden border-4 border-white/5 shadow-2xl">
+                    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm2AcD5soduXu6qRv6XS8dQFQsKsXDcesnoc2cFC2t8FH36kF7JOSMpvzZI7nMkB4_fzxqhTudjLR6RBbCCVMHJWNrPiiUG4eeEPOcLV6CyY_JNEkHAZsf2-bK8YU67q5ZmLfpoXzuwoIijmGiLxeDTwhS8eIyglpFTVzHo0tz2pF89LSB6QkzZALkbDxLUb_l2A8g1jEXnG4v34yLGHt7Pzk0L_KyhQ5rC-VL9IPkj-UacXVeW_G4e7YU8rM_be0LL8yP0yp_gQ"/>
+                </div>
+                <div class="space-y-4">
+                    <h1 class="text-4xl md:text-5xl font-display text-white">Lee Dong Wook</h1>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <div class="glass-card px-4 py-2 rounded-xl text-center min-w-[80px]">
+                            <span class="text-xs text-slate-500 uppercase block">Phim</span>
+                            <span class="text-xl font-bold text-primary">42</span>
+                        </div>
+                        <div class="glass-card px-4 py-2 rounded-xl text-center min-w-[80px]">
+                            <span class="text-xs text-slate-500 uppercase block">Awards</span>
+                            <span class="text-xl font-bold text-primary">12</span>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-on-surface-variant">
+                        <p><span class="text-white font-semibold">Ngày sinh:</span> 06/11/1981</p>
+                        <p><span class="text-white font-semibold">Nơi sinh:</span> Seoul, Hàn Quốc</p>
+                        <p><span class="text-white font-semibold">Chiều cao:</span> 1.84m</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actor Content -->
+            <div class="lg:col-span-8 space-y-12">
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-bold text-white border-l-4 border-primary pl-4">Tiểu sử</h2>
+                    <p class="text-on-surface-variant leading-relaxed text-lg">
+                        Lee Dong-wook là một nam diễn viên, người mẫu và người dẫn chương trình nổi tiếng của Hàn Quốc. Anh bắt đầu sự nghiệp vào năm 1999 và nhanh chóng trở thành một trong những ngôi sao hàng đầu của làn sóng Hallyu. Với vẻ ngoài điển trai và khả năng diễn xuất đa dạng, anh đã chinh phục khán giả qua nhiều vai diễn ấn tượng trong các bộ phim truyền hình nổi tiếng.
+                    </p>
+                </div>
+
+                <div class="space-y-8">
+                    <h2 class="text-2xl font-bold text-white border-l-4 border-primary pl-4">Phim đã tham gia</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-gutter">
+                        <!-- Movie Card 1 -->
+                        <div class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiHcF6LWA2J92uKwxnI5KvLdQhTV3tjJuceHIjcRME04xBPL9zePUET_-9-lG2AskJ-I--IQXszaMu7jHSuGSPAc55F88P1Bq2XW5GNkhcejBnTnOmL_WREV6NeNlDIshMvzakg_kjFNeVp9MZ4MSWGy0a7v18lGLz4L_Ud8RB1WXQm3rPEmRQA_U-Fo-VSaRJc05VOAXmpb6J9lL5pf9FhQM3-4Y4e7ICxigkIAgqbJjCCr9eQX4WLs0-4C62R8TViktlb_C37w"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                                <h4 class="text-white font-bold truncate">Nụ Hôn Siren</h4>
+                                <p class="text-primary text-[10px]">2024 • Vai chính</p>
+                            </div>
+                        </div>
+                        <!-- More movies -->
+                    </div>
+                    <button class="w-full py-4 rounded-xl border border-white/10 text-slate-500 hover:bg-white/5 transition-all font-semibold">Xem thêm phim</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-slate-950/80 backdrop-blur-2xl border-t border-white/10 rounded-t-2xl">
+        <a class="flex flex-col items-center justify-center text-slate-500" href="index.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="movie.html">
+            <span class="material-symbols-outlined">movie</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Movies</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-primary" href="actors.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Actors</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="profile.html">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Account</span>
+        </a>
+    </nav>
+</body>
+</html>

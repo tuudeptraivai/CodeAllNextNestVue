@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Profile - CINEPHILE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="./shared.css" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#4edea3",
+                        "on-primary": "#003824",
+                        "background": "#0b1326",
+                        "surface": "#0b1326",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#bbcabf",
+                        "primary-container": "#10b981",
+                        "on-primary-container": "#00422b",
+                        "secondary": "#95d3ba",
+                        "surface-container": "#171f33",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-highest": "#2d3449",
+                        "outline": "#86948a",
+                    },
+                    "fontFamily": {
+                        "body": ["Be Vietnam Pro", "sans-serif"],
+                        "display": ["Be Vietnam Pro", "sans-serif"],
+                        "label": ["Spline Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body text-on-surface bg-background selection:bg-primary selection:text-on-primary">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/70 backdrop-blur-2xl border-b border-white/10">
+        <div class="flex justify-between items-center px-6 h-16 md:h-20 max-w-[1440px] mx-auto">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="active:scale-95 transition-transform duration-200 text-on-surface">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a>
+                <span class="text-xl font-black text-primary tracking-tighter italic uppercase">CINEPHILE</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-on-surface">settings</span>
+                <span class="material-symbols-outlined text-on-surface">logout</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-24 md:pb-12">
+        <section class="px-6 md:px-16 py-8 max-w-[1440px] mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+                <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+                    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-zzLxsFcOVZHdbNbBUVHY9jKMGCbwvvbMNhdwFjusCFB9ML9h-ioUKwhFFBnvNENInGKhISYsOzmjH_C3qs661nR_5gMyN0sWfoRnhQcGIfRuUt57Sa-4veeKdIVaFA1ex0PCVWUxMs6NTDNrmWdL1QDya2Hc2Uar83xr-xuQHbRKduNALC9xZkvGO4RlibScawJkuk4f4eTNWD2wVcia9gpaM7iRAoItO_mQYyMN8yecf8Zl0dYiwMbh3_mzVXG7SZiOMULT-A"/>
+                </div>
+                <div class="text-center md:text-left space-y-2">
+                    <h1 class="text-3xl md:text-5xl font-display text-white">Nguyễn Hồng Tám</h1>
+                    <p class="text-primary font-semibold">Gói: Premium Member</p>
+                    <p class="text-on-surface-variant text-sm">Thành viên từ: Tháng 4, 2024</p>
+                </div>
+            </div>
+
+            <!-- Profile Tabs -->
+            <div class="space-y-8">
+                <div class="flex gap-8 border-b border-white/10 pb-4 overflow-x-auto hide-scrollbar">
+                    <button class="text-primary font-bold border-b-2 border-primary pb-4 whitespace-nowrap">Danh sách của tôi</button>
+                    <button class="text-slate-400 font-medium hover:text-white pb-4 whitespace-nowrap">Phim đã xem</button>
+                    <button class="text-slate-400 font-medium hover:text-white pb-4 whitespace-nowrap">Cài đặt tài khoản</button>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-gutter">
+                    <!-- Movie Card 1 -->
+                    <div class="group relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 md:hover:scale-105">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiHcF6LWA2J92uKwxnI5KvLdQhTV3tjJuceHIjcRME04xBPL9zePUET_-9-lG2AskJ-I--IQXszaMu7jHSuGSPAc55F88P1Bq2XW5GNkhcejBnTnOmL_WREV6NeNlDIshMvzakg_kjFNeVp9MZ4MSWGy0a7v18lGLz4L_Ud8RB1WXQm3rPEmRQA_U-Fo-VSaRJc05VOAXmpb6J9lL5pf9FhQM3-4Y4e7ICxigkIAgqbJjCCr9eQX4WLs0-4C62R8TViktlb_C37w"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <h3 class="text-white font-bold truncate text-sm">Nụ Hôn Siren</h3>
+                            <button class="mt-2 bg-white/10 hover:bg-white/20 text-white py-1.5 rounded text-xs transition-colors">Xóa khỏi danh sách</button>
+                        </div>
+                    </div>
+                    <!-- More movies -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-slate-950/80 backdrop-blur-2xl border-t border-white/10 rounded-t-2xl">
+        <a class="flex flex-col items-center justify-center text-slate-500" href="index.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="movie.html">
+            <span class="material-symbols-outlined">movie</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Movies</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-500" href="actors.html">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Actors</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-primary" href="profile.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+            <span class="text-[10px] font-semibold uppercase tracking-widest mt-1">Account</span>
+        </a>
+    </nav>
+</body>
+</html>
