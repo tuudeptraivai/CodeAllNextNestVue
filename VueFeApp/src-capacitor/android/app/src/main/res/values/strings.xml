@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">phim vibe</string>
+    <string name="title_activity_main">phim vibe</string>
+    <string name="package_name">com.phimvibe.app</string>
+    <string name="custom_url_scheme">com.phimvibe.app</string>
+</resources>

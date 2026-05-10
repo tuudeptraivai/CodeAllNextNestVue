@@ -1,0 +1,9 @@
+{
+  "appId": "com.phimvibe.app",
+  "appName": "phim vibe",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "http",
+    "hostname": "localhost"
+  }
+}
