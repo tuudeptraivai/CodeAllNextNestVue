@@ -14,7 +14,7 @@ export class PaymentController {
   @PermissionMeta({ name: 'Tạo yêu cầu nâng cấp tài khoản', module: 'Thanh toán', systemModule: 'BUSINESS' })
   @ApiOperation({ summary: 'Create payment URL for membership upgrade' })
   async createPaymentUrl(
-    @Body() data: { pack: 'premium' | 'promax' },
+    @Body() data: { pack: 'premium' | 'promax'; billing?: 'monthly' | 'yearly' },
     @Req() req: any,
   ) {
     const userId = req.user.userId || req.user.id;
@@ -22,7 +22,8 @@ export class PaymentController {
     if (ipAddr === '::1' || ipAddr === '::ffff:127.0.0.1') {
       ipAddr = '127.0.0.1';
     }
-    return this.paymentService.createPaymentUrl(userId, data.pack, ipAddr as string);
+    const billing = data.billing === 'yearly' ? 'yearly' : 'monthly';
+    return this.paymentService.createPaymentUrl(userId, data.pack, billing, ipAddr as string);
   }
 
   @Public()

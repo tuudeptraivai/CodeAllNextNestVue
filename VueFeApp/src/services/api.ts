@@ -93,5 +93,6 @@ export const removeFilmFromCollection = (filmId: string, collectionName: string)
   api.post('/users/collections/remove-film', { filmId, collectionName }).then(res => res.data);
 
 // Payment
-export const createPaymentUrl = (pack: 'premium' | 'promax') => api.post('/payment/create-payment-url', { pack }).then(res => res.data);
+export const createPaymentUrl = (pack: 'premium' | 'promax', billing: 'monthly' | 'yearly' = 'monthly') =>
+  api.post('/payment/create-payment-url', { pack, billing }).then(res => res.data);
 export const verifyPayment = (params: any) => api.post('/payment/verify', params).then(res => res.data);
