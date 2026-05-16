@@ -14,18 +14,28 @@ export class PaymentService {
     @InjectModel(User.name) private userModel: Model<User>,
   ) {}
 
-  async createPaymentUrl(userId: string, pack: 'premium' | 'promax', ipAddr: string) {
+  async createPaymentUrl(
+    userId: string,
+    pack: 'premium' | 'promax',
+    billing: 'monthly' | 'yearly',
+    ipAddr: string,
+  ) {
     const tmnCode = this.configService.get('VNP_TMN_CODE');
     const secretKey = this.configService.get('VNP_HASH_SECRET');
     let vnpUrl = this.configService.get('VNP_URL');
     const returnUrl = this.configService.get('VNP_RETURN_URL');
 
-    const amount = pack === 'premium' ? 100000 : 200000;
+    const monthlyAmount = pack === 'premium' ? 100000 : 200000;
+    // Yearly billing: 12 months at a 20% per-month discount.
+    const amount =
+      billing === 'yearly'
+        ? Math.round(monthlyAmount * 12 * 0.8)
+        : monthlyAmount;
     const createDate = dayjs().format('YYYYMMDDHHmmss');
     const expireDate = dayjs().add(15, 'minute').format('YYYYMMDDHHmmss');
     const orderId = dayjs().format('HHmmss') + Math.floor(Math.random() * 1000);
 
-    const orderInfo = `MembershipUpgrade_${userId}_${pack}`;
+    const orderInfo = `MembershipUpgrade_${userId}_${pack}_${billing}`;
 
     let vnp_Params = {};
     vnp_Params['vnp_Version'] = '2.1.0';
@@ -72,15 +82,19 @@ export class PaymentService {
         const parts = orderInfoStr.split('_');
         const userId = parts[1];
         const pack = parts[2] as 'premium' | 'promax';
+        const billing: 'monthly' | 'yearly' =
+          parts[3] === 'yearly' ? 'yearly' : 'monthly';
 
-        // Update user membership
-        const expiresAt = dayjs().add(30, 'day').toDate(); // 30 days membership
+        const expiresAt =
+          billing === 'yearly'
+            ? dayjs().add(365, 'day').toDate()
+            : dayjs().add(30, 'day').toDate();
         await this.userModel.findByIdAndUpdate(userId, {
           membership: pack,
           membershipExpiresAt: expiresAt,
         });
 
-        return { success: true, pack };
+        return { success: true, pack, billing };
       }
       return { success: false, message: 'Thanh toán không thành công' };
     }

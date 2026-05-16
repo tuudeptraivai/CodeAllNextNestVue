@@ -175,11 +175,13 @@ const userRoleLabel = computed(() => {
   return t('payment.free_member');
 });
 
+const billingCycle = ref<'monthly' | 'yearly'>('monthly');
+
 const handleBuyPackage = async (pack: 'premium' | 'promax') => {
   loading.value = true;
   try {
     message.loading(t('payment.msg_redirecting'));
-    const res = await createPaymentUrl(pack);
+    const res = await createPaymentUrl(pack, billingCycle.value);
     if (res.url) {
       window.location.href = res.url;
     }
@@ -432,17 +434,66 @@ const handleBuyPackage = async (pack: 'premium' | 'promax') => {
               </h3>
             </div>
 
+            <!-- Billing cycle toggle -->
+            <div class="flex justify-center">
+              <div class="inline-flex items-center bg-white/5 border border-white/10 rounded-2xl p-1.5 gap-1">
+                <button
+                  @click="billingCycle = 'monthly'"
+                  :class="[
+                    'px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all',
+                    billingCycle === 'monthly'
+                      ? 'bg-primary text-black shadow-[0_0_20px_rgba(78,222,163,0.3)]'
+                      : 'text-white/60 hover:text-white'
+                  ]"
+                >
+                  {{ t('payment.billing_monthly') }}
+                </button>
+                <button
+                  @click="billingCycle = 'yearly'"
+                  :class="[
+                    'px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all flex items-center gap-2',
+                    billingCycle === 'yearly'
+                      ? 'bg-primary text-black shadow-[0_0_20px_rgba(78,222,163,0.3)]'
+                      : 'text-white/60 hover:text-white'
+                  ]"
+                >
+                  {{ t('payment.billing_yearly') }}
+                  <span
+                    :class="[
+                      'text-[10px] px-2 py-0.5 rounded-full font-black',
+                      billingCycle === 'yearly' ? 'bg-black/20 text-black' : 'bg-primary/20 text-primary'
+                    ]"
+                  >
+                    -20%
+                  </span>
+                </button>
+              </div>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               <!-- Premium Pack -->
               <div class="glass-panel p-8 rounded-[40px] border-primary/30 relative overflow-hidden group">
                 <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all"></div>
+                <span v-if="billingCycle === 'yearly'" class="absolute top-4 right-4 bg-primary/20 text-primary text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                  {{ t('payment.save_20') }}
+                </span>
                 <div class="space-y-6 relative">
                   <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
                     <i class="fa-solid fa-star text-3xl"></i>
                   </div>
                   <div class="space-y-2">
                     <h4 class="text-2xl font-black text-white uppercase tracking-tight">{{ t('payment.premium_pack') }}</h4>
-                    <p class="text-primary text-2xl font-black">{{ t('payment.premium_price') }}<span class="text-xs text-white/40 ml-2">/ tháng</span></p>
+                    <p v-if="billingCycle === 'monthly'" class="text-primary text-2xl font-black">
+                      {{ t('payment.premium_price_monthly') }}<span class="text-xs text-white/40 ml-2">{{ t('payment.per_month') }}</span>
+                    </p>
+                    <div v-else class="space-y-1">
+                      <p class="text-primary text-2xl font-black">
+                        {{ t('payment.premium_price_yearly') }}<span class="text-xs text-white/40 ml-2">{{ t('payment.per_year') }}</span>
+                      </p>
+                      <p class="text-xs text-white/40">
+                        {{ t('payment.premium_per_month_effective') }} {{ t('payment.per_month') }} · {{ t('payment.billed_annually') }}
+                      </p>
+                    </div>
                   </div>
                   <ul class="space-y-3">
                     <li class="flex items-center gap-3 text-white/60 text-sm">
@@ -450,7 +501,7 @@ const handleBuyPackage = async (pack: 'premium' | 'promax') => {
                       {{ t('payment.premium_desc') }}
                     </li>
                   </ul>
-                  <button 
+                  <button
                     @click="handleBuyPackage('premium')"
                     :disabled="loading || authStore.user?.membership === 'premium' || authStore.user?.membership === 'promax'"
                     class="w-full bg-primary text-black py-4 rounded-2xl font-bold uppercase tracking-widest text-xs hover:scale-105 transition-all disabled:opacity-50 disabled:grayscale"
@@ -463,13 +514,26 @@ const handleBuyPackage = async (pack: 'premium' | 'promax') => {
               <!-- Promax Pack -->
               <div class="glass-panel p-8 rounded-[40px] border-purple-500/30 relative overflow-hidden group bg-gradient-to-br from-purple-500/5 to-transparent">
                 <div class="absolute -top-10 -right-10 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all"></div>
+                <span v-if="billingCycle === 'yearly'" class="absolute top-4 right-4 bg-purple-500/20 text-purple-300 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                  {{ t('payment.save_20') }}
+                </span>
                 <div class="space-y-6 relative">
                   <div class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400">
                     <i class="fa-solid fa-crown text-3xl"></i>
                   </div>
                   <div class="space-y-2">
                     <h4 class="text-2xl font-black text-white uppercase tracking-tight">{{ t('payment.promax_pack') }}</h4>
-                    <p class="text-purple-400 text-2xl font-black">{{ t('payment.promax_price') }}<span class="text-xs text-white/40 ml-2">/ tháng</span></p>
+                    <p v-if="billingCycle === 'monthly'" class="text-purple-400 text-2xl font-black">
+                      {{ t('payment.promax_price_monthly') }}<span class="text-xs text-white/40 ml-2">{{ t('payment.per_month') }}</span>
+                    </p>
+                    <div v-else class="space-y-1">
+                      <p class="text-purple-400 text-2xl font-black">
+                        {{ t('payment.promax_price_yearly') }}<span class="text-xs text-white/40 ml-2">{{ t('payment.per_year') }}</span>
+                      </p>
+                      <p class="text-xs text-white/40">
+                        {{ t('payment.promax_per_month_effective') }} {{ t('payment.per_month') }} · {{ t('payment.billed_annually') }}
+                      </p>
+                    </div>
                   </div>
                   <ul class="space-y-3">
                     <li class="flex items-center gap-3 text-white/60 text-sm">
@@ -477,7 +541,7 @@ const handleBuyPackage = async (pack: 'premium' | 'promax') => {
                       {{ t('payment.promax_desc') }}
                     </li>
                   </ul>
-                  <button 
+                  <button
                     @click="handleBuyPackage('promax')"
                     :disabled="loading || authStore.user?.membership === 'promax'"
                     class="w-full bg-purple-500 text-white py-4 rounded-2xl font-bold uppercase tracking-widest text-xs hover:scale-105 transition-all disabled:opacity-50 disabled:grayscale"
